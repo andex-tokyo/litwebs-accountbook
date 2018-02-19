@@ -2,3 +2,7 @@ ActiveRecord::Base.establish_connection(ENV['DATABASE_URL']||"sqlite3:db/develop
 class Item < ActiveRecord::Base
 
 end
+
+class Category < ActiveRecord::Base
+
+end
