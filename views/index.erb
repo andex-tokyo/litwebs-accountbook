@@ -24,6 +24,7 @@
       <div>
         <p><%= item.title %></p>
         <p><%= item.price %>円</p>
+        <p><%= item.category.try(:name) %></p>
       </div>
     <% end %>
   </div>
