@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>account_book</title>
+  <script src="/assets/js/Chart.min.js"></script>
 </head>
 <body>
   <form action="/create" method="post">
@@ -21,6 +22,27 @@
       </div>
     <% end %>
   </div>
+  <canvas id="graph"></canvas>
+  <script>
+    ctx = document.getElementById("graph");
+    var prices = [], color = [], labels =[];
+    <% @items.each_with_index do |item,idx| %>
+     prices.push(<%= item.price %>);
+     labels.push('<%= item.title %>');
+    <% end %>
+    
+    var data = {
+      labels: labels,
+      datasets:[
+        {
+          data: prices,
+        }]
+    };
+    var myDoughnut = new Chart(ctx,{
+      type: 'doughnut',
+      data: data
+    });
+  </script>
   <div>
     <p>合計：<%= @total %>円</p>
   </div>
