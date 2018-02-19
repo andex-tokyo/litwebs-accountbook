@@ -5,11 +5,17 @@
   <title>account_book</title>
 </head>
 <body>
+  
   <form action="/create" method="post">
     <label for="title">商品名</label>
       <input type="text" name="title" id="title">
     <label for="price">金額</label>
       <input type="text" name="price" id="price">
+      <select name="category" id="category">
+        <% @categories.each do |category| %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+      </select>
       <input type="submit" value="追加">
   </form>
   
