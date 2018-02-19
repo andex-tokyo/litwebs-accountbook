@@ -17,3 +17,8 @@ post '/create' do
     })
     redirect '/'
 end
+
+post '/delete/:id' do
+    Item.find(params[:id]).destroy
+    redirect '/'
+end

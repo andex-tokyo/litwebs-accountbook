@@ -18,6 +18,11 @@
       <div>
         <p><%= item.title %></p>
         <p><%= item.price %>円</p>
+        <span>
+          <form action="/delete/<%= item.id %>" method="post">
+            <input type="submit" value="削除">
+          </form>
+        </span>
       </div>
     <% end %>
   </div>
