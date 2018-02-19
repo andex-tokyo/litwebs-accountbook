@@ -17,9 +17,12 @@
     <% @items.each do |item| %>
       <div>
         <p><%= item.title %></p>
-        <p><%= item.price %></p>
+        <p><%= item.price %>円</p>
       </div>
     <% end %>
+  </div>
+  <div>
+    <p>合計：<%= @total %>円</p>
   </div>
 </body>
 </html>

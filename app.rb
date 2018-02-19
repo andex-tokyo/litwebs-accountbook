@@ -6,6 +6,7 @@ require './models/item.rb'
 
 get '/' do
     @items = Item.all
+    @total = Item.sum(:price)
     erb :index
 end
 
