@@ -25,10 +25,12 @@
   <canvas id="graph"></canvas>
   <script>
     ctx = document.getElementById("graph");
-    var prices = [], color = [], labels =[];
+    clr = ['lightsalmon','palegreen','lightskyblue','plum','silver','pink']
+    var prices = [], colors = [], labels =[];
     <% @items.each_with_index do |item,idx| %>
      prices.push(<%= item.price %>);
      labels.push('<%= item.title %>');
+     colors.push(clr[<%= idx % 6 %>]);
     <% end %>
     
     var data = {
@@ -36,6 +38,7 @@
       datasets:[
         {
           data: prices,
+          backgroundColor: colors
         }]
     };
     var myDoughnut = new Chart(ctx,{
