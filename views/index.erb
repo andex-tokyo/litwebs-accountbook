@@ -35,7 +35,20 @@
       <div>
         <p><%= item.title %></p>
         <p><%= item.price %>円</p>
+<<<<<<< HEAD
         <p><%= item.category.try(:name) %></p>
+=======
+        <span>
+          <form action="/delete/<%= item.id %>" method="post">
+            <input type="submit" value="削除">
+          </form>
+        </span>
+        <span>
+          <form action="/edit/<%= item.id %>" method="post">
+            <input type="submit" value="編集">
+          </form>
+        </span>
+>>>>>>> delete_update
       </div>
     <% end %>
   </div>
