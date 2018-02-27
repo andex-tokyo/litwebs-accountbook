@@ -44,5 +44,4 @@ post '/renew/:id' do
         price: params[:price]
     })
     redirect '/'
->>>>>>> delete_update
 end
